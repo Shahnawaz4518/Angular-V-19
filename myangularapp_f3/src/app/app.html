@@ -1,0 +1,54 @@
+<div style="text-align:center;">
+<h1>Directives In Angular 19</h1>
+
+<!-- <div *ngIf="true">Static Way</div>
+
+<div *ngIf="isvalid">Dyanmaic way to show/hide content based on condition.</div>   -->
+
+
+<!-- new modern syntax of Angular 19 -->
+<!-- @if(isLoggedIn){
+  <b>User Is Logged In</b>
+} -->
+
+
+<button (click)="login()">Log In</button>
+<button (click)="logout()">Log Out</button>
+
+<br>
+
+<!-- using two if conditions -->
+
+
+ <!-- @if(isLoggedIn) {
+    <b>User is logged in</b>
+}
+@if(!isLoggedIn){
+    <b>User is not logged in</b>
+} -->
+
+
+<!-- using else condition -->
+
+<!-- @if(isLoggedIn){
+  <b>User Is Logged In</b>
+}@else {
+  <b>User Is Logged Out</b>
+} -->
+
+
+
+<!-- using else-if   else-if Condition -->
+
+@if(age<10){
+<b>you are child</b>
+}@else if(age>10 && age<45){
+  <b>you are young</b>
+}@else {
+  <b>you are old</b>
+}
+
+
+
+
+</div>

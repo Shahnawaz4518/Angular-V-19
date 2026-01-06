@@ -1,0 +1,16 @@
+.one{
+    background-color: red;
+    color: white;
+}
+.two{
+    background-color: blue;
+    color: white;
+}
+.three{
+    font-size: 40px;
+    font-weight: bold;
+}
+.four{
+    font-size: 60px;
+    font-style: italic;
+}

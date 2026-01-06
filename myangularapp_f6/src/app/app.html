@@ -1,0 +1,44 @@
+<div style="text-align:center;">
+<h1>Attribute Directives</h1>
+
+<!-- ngfor & ngstyle demo Example -->
+
+<!-- <div [ngStyle]="{'background-color':mycountry=='USA'?'green':'blue'}">Hello World </div> -->
+
+
+<!-- <div *ngFor="let emp of employees">
+ <div [ngStyle]="{'background-color':getcolor(emp.country)}">Name:{{emp.name}} | {{emp.country}}</div> 
+
+</div> -->
+
+
+
+
+<!-- ngClass Demo Example Example -->
+
+<!-- <h3>ngClass with string</h3> -->
+<!-- <div [ngClass]="'one three'">Hello Shahnawaz</div> -->
+
+<!-- <div *ngFor="let emp of employees">
+  <div [ngClass]="'one three'">
+    Name: {{ emp.name }} | Country: {{ emp.country }}
+  </div>
+</div> -->
+
+<!-- <h3>ngClass with array</h3>
+
+<div [ngClass]="['two']">Hello Shahnawaz</div> -->
+
+
+<h3>ngClass with object</h3>
+
+<!-- <div [ngClass]="{'one':false, 'three':true}">Hello Shahnawaz</div> -->
+
+<!-- <div [ngClass]="{'one':mycountry=='India'}">Hello Shahnawaz</div> -->
+
+<div *ngFor="let emp of employees;index as i">
+  <div [ngClass]="{'one':i%2==0, 'two':i%2==1}">
+   {{i}}- Name: {{ emp.name }} | Country: {{ emp.country }}
+  </div>
+</div>
+</div> 

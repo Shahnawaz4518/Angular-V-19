@@ -1,0 +1,78 @@
+<div style="text-align:center;">
+<h1>Directives In Angular 19 [@For, track, $->count,index,first,last,even,odd ]</h1>
+
+<!-- @for(emp of employees;track emp.id){
+  <ul>
+    <li>
+      ID:{{emp.id}} | Name:{{emp.name}}
+    </li>
+  </ul>
+}@empty {
+  <b>No Data Found !!</b>
+} -->
+
+<!-- <table border="1">
+  <tr>
+    <th>Emp ID</th>
+    <th>Emp Name</th>
+  </tr>
+
+@for(emp of employees;let i=$index; track emp.id){
+  <tr>
+    <td>{{i+1}}</td>
+    <td>{{emp.id}}</td>
+    <td>{{emp.name}}
+    </td>
+  </tr>
+}@empty {
+  No Data Found !!
+}
+</table> -->
+
+
+
+<!-- 1. for index value -->
+
+<!-- @for(emp of employees;let i=$index; track emp.id){
+  <ul>
+    <li>
+     {{i}}-ID:{{emp.id}} | Name:{{emp.name}}
+    </li>
+  </ul>
+}@empty {
+  <b>No Data Found !!</b>
+} -->
+
+
+<!-- for even index value -->
+
+
+<!-- @for(emp of employees;let i=$index;let e=$even; track emp.id){
+  <ul>
+    @if(e==true){
+    <li>
+     {{i}}-ID:{{emp.id}} | Name:{{emp.name}}
+    </li>
+  }
+  </ul>
+}@empty {
+  <b>No Data Found !!</b>
+} -->
+
+
+<!-- for odd index value -->
+
+@for(emp of employees;let i=$index;let o=$odd; track emp.id){
+  <ul>
+    @if(o==true){
+    <li>
+     {{i}}-ID:{{emp.id}} | Name:{{emp.name}}
+    </li>
+  }
+  </ul>
+}@empty {
+  <b>No Data Found !!</b>
+}
+
+<!-- same for first,last Item or Value -->
+</div>

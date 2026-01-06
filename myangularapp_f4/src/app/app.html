@@ -1,0 +1,52 @@
+<div style="text-align:center;">
+<h1>Directives In Angular 19 [Switch]</h1>
+
+
+<!-- @switch(name){
+  @case('Raina'){
+    <b>Hello Raina</b>
+  }
+   @case('Rohit'){
+    <b>Hello Rohit</b>
+  }
+   @case('Dhoni'){
+    <b>Hello Dhoni</b>
+  }
+   @case('Virat'){
+    <b>Hello Virat</b>
+  }
+   @case('Shahnawaz'){
+    <b>Hello Shahnawaz</b>
+  }
+  @default {
+    <b>No Data Matched</b>
+  }
+} -->
+
+
+<!-- 2nd Example Of Switch Case -->
+Enter Your Name : <input type="text" #textname (keyup)="0">
+<br>
+@switch(textname.value){
+  @case('Raina'){
+    <b>Hello Raina</b>
+  }
+   @case('Rohit'){
+    <b>Hello Rohit</b>
+  }
+   @case('Dhoni'){
+    <b>Hello Dhoni</b>
+  }
+   @case('Virat'){
+    <b>Hello Virat</b>
+  }
+   @case('Shahnawaz'){
+    <b>Hello Shahnawaz</b>
+  }
+  @default {
+    <b>No Data Matched</b>
+  }
+}
+
+</div>
+

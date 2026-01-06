@@ -1,0 +1,10 @@
+<div style="text-align:center; background-color: rgb(101, 161, 121);">
+<h1>Child Component</h1>
+
+</div>
+
+
+<!-- Parent To Child Commmunication Using MetaData -->
+<!-- Value from Parent Component is : {{Pdata}} -->
+
+Child Componenet : <input type="text" #CComponent (keyup)="senddata(CComponent.value)" >

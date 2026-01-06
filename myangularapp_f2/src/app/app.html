@@ -1,0 +1,10 @@
+<div style="text-align:center; background-color: lightblue;">
+<h1>Parent Componenet</h1>
+</div>
+
+<!-- Parent To Child Commmunication Using MetaData -->
+<!-- Parent Component : <input type="text" #PComponent (keyup)="0">
+
+<app-childcomponent [Pdata]="PComponent.value"></app-childcomponent> -->
+
+<app-childcomponent (childevent)="Cdata=$event"></app-childcomponent>
