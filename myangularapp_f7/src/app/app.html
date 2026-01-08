@@ -51,7 +51,106 @@
 
    <!-- Attribute Data Binding In Angular 19 -->
 
-   <h1>Attribute Data Binding In Angular 19</h1>
+   <!-- <h1>Attribute Data Binding In Angular 19</h1>
+
+    <table border="1">
+      <tr>
+         <td [attr.colspan]="col">Employee Details</td>
+      </tr>
+      <tr>
+         <td>First Name</td>
+         <td>Virat</td>
+      </tr>
+      <tr>
+         <td>Last Name</td>
+         <td>Kohli</td>
+      </tr>
+      <tr>
+         <td>Gender</td>
+         <td>Male</td>
+      </tr>
+
+    </table> -->
+
+
+
+
+
+    
+    <!-- Style Binding In Angular 19 -->
+     <!-- <h1>Style Binding In Angular 19</h1> -->
+
+     <!-- <button style="background-color:red">Click Me</button> <br>
+     <button [style.background-color]="color">Click Me</button> <br>
+     <button [style.background-color]="color" [style.font-weight]="bold">Click Me</button> <br>
+     <button [style.background-color]="color" [style.font-weight]="isbold ? 'bold' : 'normal'">Click Me</button> <br> -->
+
+
+
+     <!-- Class Binding In Angular 19 -->
+      <!-- <h1>Class Data Binding In Angular 19</h1>
+
+      <button class="colorClass">Click Me</button> <br>
+      <button class="colorClass" [class]="classesToApply ">Click Me</button> -->
+
+
+
+      <!-- 4.Property Binding In Angular 19 -->
+      <!-- <h1>Property Binding In Angular 19</h1>
+
+      <span [innerHTML]="name"></span><br>
+
+      <img [src]="imgpath" alt="Project's QR Code" width="400px"> -->
+
+
+      
+
+
+      <!-- Interpolation VS Property Binding -->
+       
+      <!-- <button (click)="enabledisable()">Enable Disable</button>
+
+      <h1>Interpolation</h1>
+      <button disabled="{{ currentvalue}}">Click Me</button>
+
+      <h1>Property</h1>
+      <button [disabled]="currentvalue">Click Me  </button> -->
+
+
+
+
+      <!-- Event Data Binding In Angular 19 -->
+
+      <!-- <button (click)="click1()">Click 1</button> <br>
+
+      <input type="text" (keyup)="keyup()" (keydown)="keydown()"> -->
+
+
+
+      <!-- Enter your message: <input type="text" #txtmsg (keyup)="setmessage(txtmsg.value)">
+      <br>
+      Your Message : {{_message}} -->
+
+
+
+
+
+
+
+      <!-- Two Way Data Binding In Angular - 19 -->
+
+      <!-- Here We use two binding -->
+
+       <!-- Enter Your Message : <input type="text" [value]="_message" #txtmsg (keyup)="setmessage(txtmsg.value)"><br>
+
+       Your Message : {{_message}} -->
+
+
+
+
+       <!-- Here We Use Two Data Binding In Simple Way With NgModel-->
+       <input type="text" [(ngModel)]="_message"><br>
+        Your Message : {{ _message }}
 
 
 </div>
