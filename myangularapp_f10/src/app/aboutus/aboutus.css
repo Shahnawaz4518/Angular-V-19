@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Hero */
+.hero {
+  background-color: #0a58ca;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.95;
+}
+
+/* About */
+.about {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.about h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+
+.about-text {
+  text-align: center;
+  color: #555;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Mission & Vision */
+.info {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 30px;
+  flex: 1;
+  min-width: 280px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+  color: #0a58ca;
+  margin-bottom: 10px;
+}
+
+/* Values */
+.values {
+  background-color: #ffffff;
+  padding: 50px 20px;
+  margin-top: 40px;
+}
+
+.values h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.values-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.value-item {
+  background-color: #0a58ca;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .about h2,
+  .values h2 {
+    font-size: 26px;
+  }
+}
