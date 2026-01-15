@@ -3,15 +3,18 @@ import { Dashboard } from './dashboard/dashboard';
 import { Aboutus } from './aboutus/aboutus';
 import { Contactus } from './contactus/contactus';
 import { Pagenotfound } from './pagenotfound/pagenotfound';
+import { Login } from './login/login';
+import { authGuard } from './auth-guard';
 
 export const routes: Routes = [
     //{path:'',redirectTo:'home',pathMatch:'full'},
     {path:'',component:Dashboard},
     {path:'home',component:Dashboard,title:'Home Page'},
     {path:'aboutus',component:Aboutus, title:'About Page'},
-    {path:'contactus',component:Contactus, title:'Contact Page'},
+    {path:'contactus',component:Contactus, title:'Contact Page', canActivate:[authGuard]},
     {path:'aboutusnew',component:Aboutus,outlet:'outlet2'},
     {path:'aboutusnew/:id',component:Aboutus,outlet:'outlet2'},
+    {path: 'login',component:Login, title:'Login'},
     {path:'**',component:Pagenotfound, title:'page not found'},
 
     

@@ -3,10 +3,11 @@
 
 
 <div>
-    <a routerLink="home">Home</a> <br>
-    <a routerLink="aboutus">About US</a> <br>
-    <a routerLink="contactus">Contact US</a> <br>
-    <a routerLink="student">Student</a> <br>
+    <a routerLink="login" routerLinkActive="active home">Login</a> <br>
+    <a routerLink="home" routerLinkActive="active home">Home</a> <br>
+    <a routerLink="aboutus" [routerLinkActive]="classtoapply">About US</a> <br>
+    <a routerLink="contactus" routerLinkActive="active home">Contact US</a> <br>
+    <a routerLink="student" routerLinkActive="active hom e">Student</a> <br>
 
     <a [routerLink]="[{outlets:{outlet2:['aboutusnew']}}]">About US new</a> <br>
     <a [routerLink]="[{ outlets: { outlet2: ['aboutusnew', 501] } }]">About US new 2</a>
