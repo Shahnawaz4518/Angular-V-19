@@ -28,4 +28,9 @@ ngOnInit(){
   })
 }
 
+register(formdata:FormGroup){
+  console.log(formdata.value)
+
+}
+
 }
