@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 //import { ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 
 
@@ -95,10 +95,48 @@ ngOnInit() {
 
     //for whole form we use this
 
-    this.regForm.statusChanges.subscribe(formdata => {
-      console.log("form status : "+formdata);
-    })
+    // this.regForm.statusChanges.subscribe(formdata => {
+    //   console.log("form status : "+formdata);
+    // })
 
+
+
+
+    //FormArray In Reactive Form
+    // let arr=new FormArray([
+    //   new FormControl(),
+    //   new FormControl()
+    // ])
+    
+    // console.log(arr.value);
+    // console.log(arr.valid);
+
+
+
+
+    //   let arr=new FormArray([
+    //   new FormControl('Shahnawaz'),
+    //   new FormControl('1234567891')
+    // ])
+    
+    // console.log(arr.value);
+    // console.log(arr.valid);
+
+
+    // now add validators
+
+      let arr=new FormArray([
+      new FormControl('Shahnawaz'),
+      new FormControl('',Validators.required)
+    ])
+    
+    console.log(arr.value);
+    console.log(arr.valid);
+
+    arr.reset();
+
+    console.log(arr.value);
+    console.log(arr.valid);
 
   }
 
