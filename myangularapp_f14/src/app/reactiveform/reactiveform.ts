@@ -93,7 +93,7 @@ ngOnInit() {
 
 
 
-    //for whole form 
+    //for whole form we use this
 
     this.regForm.statusChanges.subscribe(formdata => {
       console.log("form status : "+formdata);
