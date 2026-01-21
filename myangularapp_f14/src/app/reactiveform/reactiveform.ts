@@ -63,6 +63,43 @@ ngOnInit() {
         Validators.pattern('^[0-9]{10}$')
       ]]
     });
+
+    // this.regForm.get('fname')?.valueChanges.subscribe(firstname =>{
+    //   console.log("fname value : "+firstname);
+    // })
+
+    // this.regForm.get('lname')?.valueChanges.subscribe(lastname => {
+    //   console.log('lname value'+lastname)
+    // })
+
+
+    // if we cant to apply whole form then we use
+    // this.regForm.valueChanges.subscribe(formdata =>{
+    //   console.log("fname value : "+formdata.fname);
+    //   console.log("lname value : "+formdata.lname);
+      
+    // })
+
+
+
+    // for status is valid or not
+    // this.regForm.get('fname')?.statusChanges.subscribe(firstnamestatus => {
+    //   console.log("fname status : "+firstnamestatus);
+    // })
+
+    // this.regForm.get('lname')?.statusChanges.subscribe(lastnamestatus => {
+    //   console.log("lname status : "+lastnamestatus);
+    // })
+
+
+
+    //for whole form 
+
+    this.regForm.statusChanges.subscribe(formdata => {
+      console.log("form status : "+formdata);
+    })
+
+
   }
 
   register(formdata: FormGroup) {
