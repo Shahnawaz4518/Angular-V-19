@@ -78,15 +78,27 @@ ngOnInit() {
     //this.regForm.reset();
 
 
-    //static way to get data particaaly received
+    //static way to get data particaaly received and reset
     // this.regForm.reset({
     //   fname:'Virat'
     // })
 
 
-    //dynamic way to get data partially received
+    //dynamic way to get data partially received and reset
     this.regForm.reset({
-      fname: this.regForm.get('fname')?.value
+      
+    })
+  }
+
+
+  // if we need fill full data on form we use set value and if we want fill partically we use patched value
+  filldata(){
+    this.regForm.setValue({
+      id:101,
+      fname:'ViratKohli',
+      lname:'Kohli',
+      email:'virat@gmail.com',
+      mobileno:'1234567891'
     })
   }
 }
