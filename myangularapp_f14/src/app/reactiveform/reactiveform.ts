@@ -68,5 +68,25 @@ ngOnInit() {
   register(formdata: FormGroup) {
     console.log(this.regForm.value);
     console.log(formdata.valid);
+
+    //get value
+    console.log(this.regForm.get('fname')?.value);
+    console.log(this.regForm.get('email')?.value);
+  }
+
+  reset(){
+    //this.regForm.reset();
+
+
+    //static way to get data particaaly received
+    // this.regForm.reset({
+    //   fname:'Virat'
+    // })
+
+
+    //dynamic way to get data partially received
+    this.regForm.reset({
+      fname: this.regForm.get('fname')?.value
+    })
   }
 }
