@@ -1,12 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 //import { ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-reactiveform',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule],
   templateUrl: './reactiveform.html',
   styleUrl: './reactiveform.css',
 })
@@ -42,22 +43,30 @@ constructor(private _fb:FormBuilder){}
 // }
 
 
-ngOnInit(){
-  this.regForm=this._fb.group({
-      id:[''],
-      fname:[''],
-      lname:[''],
-      email:[''],
-      mobileno:[''],
+ngOnInit() {
+    this.regForm = this._fb.group({
+      id: [''],
 
-      
-  })
-}
+      fname: ['', [
+        Validators.required,
+        Validators.minLength(10)]],
 
-register(formdata:FormGroup){
-  //console.log(formdata.value)
-   console.log(this.regForm.value);
-   console.log(formdata.valid)
-}
+      lname: ['', Validators.required],
 
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+
+      mobileno: ['', [
+        Validators.required,
+        Validators.pattern('^[0-9]{10}$')
+      ]]
+    });
+  }
+
+  register(formdata: FormGroup) {
+    console.log(this.regForm.value);
+    console.log(formdata.valid);
+  }
 }

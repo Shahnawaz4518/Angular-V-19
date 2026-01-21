@@ -1,27 +1,72 @@
-<h2>Registration From</h2>
+<h2>Registration Form</h2>
 
+<form [formGroup]="regForm" (ngSubmit)="register(regForm)">
 
-<div>
-    <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
-        <div>
-            First Name : <input type="text" placeholder="Enter Your First Name" formControlName="fname">
-        </div>
+  <!-- First Name -->
+  <div>
+    First Name :
+    <input type="text" placeholder="Enter Your First Name" formControlName="fname">
 
-         <div>
-            Last Name : <input type="text" placeholder="Enter Your Last Name" formControlName="lname">
-        </div>
+    <div *ngIf="regForm.controls['fname'].touched && regForm.controls['fname'].errors">
+      <small *ngIf="regForm.controls['fname'].errors['required']">
+        First Name is required !!
+      </small>
 
-         <div>
-             Email ID : <input type="text" placeholder="Enter Your Email Id" formControlName="email">
-        </div>
+      <small *ngIf="regForm.controls['fname'].errors['minlength']">
+      Minimum 3 characters required !!
+      </small>
 
-         <div>
-            Mobile No : <input type="text" placeholder="Enter Your Mobile Number" formControlName="mobileno">
-        </div>
+       <small *ngIf="regForm.controls['fname'].errors['maxlength']">
+      Maximum 10 characters allowed !!
+       </small>
+    </div>
+  </div>
 
-        <div>
-            <button type="submit">Registration</button>
-        </div>
+  <!-- Last Name -->
+  <div>
+    Last Name :
+    <input type="text" placeholder="Enter Your Last Name" formControlName="lname">
 
-    </form>
-</div>
+    <div *ngIf="regForm.controls['lname'].touched && regForm.controls['lname'].errors">
+      <small>Last Name is required !!</small>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div>
+    Email ID :
+    <input type="text" placeholder="Enter Your Email Id" formControlName="email">
+
+    <div *ngIf="regForm.controls['email'].touched && regForm.controls['email'].errors">
+      <small *ngIf="regForm.controls['email'].errors['required']">
+        Email is required !!
+      </small>
+      <small *ngIf="regForm.controls['email'].errors['email']">
+        Invalid Email Format !!
+      </small>
+    </div>
+  </div>
+
+  <!-- Mobile -->
+  <div>
+    Mobile No :
+    <input type="text" placeholder="Enter Your Mobile Number" formControlName="mobileno">
+
+    <div *ngIf="regForm.controls['mobileno'].touched && regForm.controls['mobileno'].errors">
+      <small *ngIf="regForm.controls['mobileno'].errors['required']">
+        Mobile Number is required !!
+      </small>
+      <small *ngIf="regForm.controls['mobileno'].errors['pattern']">
+        Mobile Number must be 10 digits !!
+      </small>
+    </div>
+  </div>
+
+  <!-- Button -->
+  <div>
+    <button type="submit" [disabled]="regForm.invalid">
+      Registration
+    </button>
+  </div>
+
+</form>
