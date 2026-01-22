@@ -13,12 +13,12 @@
       </small>
 
       <small *ngIf="regForm.controls['fname'].errors['minlength']">
-      Minimum 3 characters required !!
+        Minimum 3 characters required !!
       </small>
 
-       <small *ngIf="regForm.controls['fname'].errors['maxlength']">
-      Maximum 10 characters allowed !!
-       </small>
+      <small *ngIf="regForm.controls['fname'].errors['maxlength']">
+        Maximum 10 characters allowed !!
+      </small>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
     </div>
   </div>
 
-  <!-- Mobile --->
+  <!-- Mobile -->
   <div>
     Mobile No :
     <input type="text" placeholder="Enter Your Mobile Number" formControlName="mobileno">
@@ -62,19 +62,34 @@
     </div>
   </div>
 
-  <!-- Button -->
+  <!-- ===============================
+       Dynamic FormArray Section
+       =============================== -->
+  <div formArrayName="skills">
+    <h3>Skills</h3>
+
+    <div *ngFor="let skill of skills.controls; let i = index">
+      <input type="text" [formControlName]="i" placeholder="Enter Skill">
+
+      <button type="button" (click)="removeSkill(i)">Remove</button>
+
+      <div *ngIf="skill.touched && skill.invalid">
+        <small>Skill is required !!</small>
+      </div>
+    </div>
+
+    <button type="button" (click)="addSkill()">Add Skill</button>
+  </div>
+
+  <!-- Buttons -->
   <div>
     <button type="submit" [disabled]="regForm.invalid">
       Registration
     </button>
-     
+
     <button type="reset">Cancel</button>
-
-    <button (click)="reset()">Cancel2</button>
-
-    <button (click)="filldata()">Fill Data</button>
-    
+    <button type="button" (click)="reset()">Cancel2</button>
+    <button type="button" (click)="filldata()">Fill Data</button>
   </div>
 
 </form>
-    
