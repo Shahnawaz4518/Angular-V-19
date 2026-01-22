@@ -93,3 +93,122 @@
   </div>
 
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Below Is Same Code But There I use If- else Codition Instead of NgIf-->
+
+
+
+
+
+
+<h2>Registration Form</h2>
+
+<form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+
+  <!-- First Name -->
+  <div>
+    First Name :
+    <input type="text" placeholder="Enter Your First Name" formControlName="fname">
+
+    @if (regForm.controls['fname'].touched && regForm.controls['fname'].errors) {
+      @if (regForm.controls['fname'].errors['required']) {
+        <small>First Name is required !!</small>
+      }
+      @else if (regForm.controls['fname'].errors['minlength']) {
+        <small>Minimum 3 characters required !!</small>
+      }
+      @else if (regForm.controls['fname'].errors['maxlength']) {
+        <small>Maximum 10 characters allowed !!</small>
+      }
+    }
+  </div>
+
+  <!-- Last Name -->
+  <div>
+    Last Name :
+    <input type="text" placeholder="Enter Your Last Name" formControlName="lname">
+
+    @if (regForm.controls['lname'].touched && regForm.controls['lname'].errors) {
+      <small>Last Name is required !!</small>
+    }
+  </div>
+
+  <!-- Email -->
+  <div>
+    Email ID :
+    <input type="text" placeholder="Enter Your Email Id" formControlName="email">
+
+    @if (regForm.controls['email'].touched && regForm.controls['email'].errors) {
+      @if (regForm.controls['email'].errors['required']) {
+        <small>Email is required !!</small>
+      }
+      @else if (regForm.controls['email'].errors['email']) {
+        <small>Invalid Email Format !!</small>
+      }
+    }
+  </div>
+
+  <!-- Mobile -->
+  <div>
+    Mobile No :
+    <input type="text" placeholder="Enter Your Mobile Number" formControlName="mobileno">
+
+    @if (regForm.controls['mobileno'].touched && regForm.controls['mobileno'].errors) {
+      @if (regForm.controls['mobileno'].errors['required']) {
+        <small>Mobile Number is required !!</small>
+      }
+      @else if (regForm.controls['mobileno'].errors['pattern']) {
+        <small>Mobile Number must be 10 digits !!</small>
+      }
+    }
+  </div>
+
+  <!-- ===============================
+       Dynamic FormArray Section
+       =============================== -->
+  <div formArrayName="skills">
+    <h3>Skills</h3>
+
+    @for (skill of skills.controls; track $index) {
+      <div>
+        <input type="text" [formControlName]="$index" placeholder="Enter Skill">
+
+        <button type="button" (click)="removeSkill($index)">Remove</button>
+
+        @if (skill.touched && skill.invalid) {
+          <small>Skill is required !!</small>
+        }
+      </div>
+    }
+
+    <button type="button" (click)="addSkill()">Add Skill</button>
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <button type="submit" [disabled]="regForm.invalid">
+      Registration
+    </button>
+
+    <button type="reset">Cancel</button>
+    <button type="button" (click)="reset()">Cancel2</button>
+    <button type="button" (click)="filldata()">Fill Data</button>
+  </div>
+
+</form>
