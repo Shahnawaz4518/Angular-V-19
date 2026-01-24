@@ -2,12 +2,29 @@
   <h1>Signals In Angular 19</h1>
 
 
-  <h2>{{x}}</h2>
+
+  <!-- Tutorial Reference -->
+
+  <!-- <h2>{{x}}</h2>
 
   <h2>{{count()}}</h2>
 
 
   <button (click)="setvalue()">Set Value</button>
+ -->
 
+
+
+
+ <!-- Self Practice -->
+  
+
+<h2>🛒 Cart Items: {{ cart.cartCount() }}</h2>
+
+<p *ngIf="cart.hasItems()">Items available in cart</p>
+
+<hr>
+
+<app-product></app-product>
 
 </div>
