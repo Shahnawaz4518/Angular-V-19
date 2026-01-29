@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>HttpClient POST</h1>
+
+  <button class="btn" (click)="saveBook()">Save Book</button>
+  <button class="btn" (click)="putData()">Save Book</button>
+
+  <!-- Shimmer Loader -->
+  @if (loading) {
+    <div class="card-grid">
+      @for (i of [1,2,3,4,5]; track i) {
+        <div class="card shimmer">
+          <div class="line title"></div>
+          <div class="line"></div>
+          <div class="line small"></div>
+        </div>
+      }
+    </div>
+  }
+
+  <!-- Data Cards -->
+  @else {
+    <div class="card-grid">
+      @for (post of posts; track post.id) {
+        <div class="card">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.body }}</p>
+          <span>User ID: {{ post.userId }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>
