@@ -1,0 +1,64 @@
+<div style="text-align: center;">
+<h1>HttpClient Get In Angular 19</h1>
+
+
+<h3>Show Data Using HttpClient get and Subscribe Method</h3>
+
+<ul>
+  @for (book of AllBooks; track book.id) {
+    <li>
+      ID : {{book.id}} | {{book.name}} | 
+      Category : {{book.category}} | 
+      year : {{book.year}}
+    </li>
+  }
+</ul>
+
+<!-- {{AllBooks$}} -->
+
+<!-- <h3>Show Data Using HttpClient get and Async Pipe</h3>
+
+<ul>
+  @for (book of AllBooks$ | async; track book.id) {
+    <li>
+      ID : {{book.id}} | {{book.name}} | 
+      Category : {{book.category}} | 
+      year : {{book.year}}
+    </li>
+  }
+</ul> -->
+
+<br>
+
+<button (click)="insertbook()">Save Data</button>
+
+<h3>Book After Saved</h3>
+
+<ul>
+  @for (book of booksaftersaved; track book.id) {
+    <li>
+      ID : {{book.id}} | {{book.name}} | 
+      Category : {{book.category}} | 
+      year : {{book.year}}
+    </li>
+  }
+</ul>
+
+<br>
+
+<button (click)="updatebook()" >Update</button>
+
+<h3>Book After Update</h3>
+
+<ul>
+  @for (book of bookafterupdate; track book.id) {
+    <li>
+      ID : {{book.id}} | {{book.name}} | 
+      Category : {{book.category}} | 
+      year : {{book.year}}
+    </li>
+  }
+</ul>
+
+
+</div>
