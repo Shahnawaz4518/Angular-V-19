@@ -20,6 +20,7 @@ export class App {
 
   booksaftersaved:Book[]=[];
   bookafterupdate:Book[]=[];
+  bookafterdelete:Book[]=[];
 
 
   constructor(private _bookservice:Bookservice) {
@@ -67,6 +68,12 @@ export class App {
 
   }
 
+  getBookAfterDelete(){
+      this._bookservice.getBooks().subscribe(res=>{
+        this.bookafterdelete=res;
+    })
+  }
+
   saveBook(book:Book){
      this._bookservice.createBook(book).subscribe(res=>{
       console.log(res);
@@ -98,5 +105,18 @@ export class App {
          // console.log("Server side error", err.status, err.message);
         }
       });
+  }
+
+
+  deleteBook(){
+  this.deleteData(3);
+  }
+
+
+  deleteData(id: number){
+    this._bookservice.DeleteBook(id).subscribe(res=>{
+      console.log(res);
+      this. getBookAfterDelete();
+    })
   }
 }

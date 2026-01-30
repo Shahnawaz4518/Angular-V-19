@@ -60,5 +60,21 @@
   }
 </ul>
 
+<br>
+
+<button (click)="deleteBook()">Delete Book</button>
+
+<h3>Book After Delete</h3>
+
+<ul>
+  @for (book of bookafterdelete; track book.id) {
+    <li>
+      ID : {{book.id}} | {{book.name}} | 
+      Category : {{book.category}} | 
+      year : {{book.year}}
+    </li>
+  }
+</ul>
+
 
 </div>

@@ -42,4 +42,12 @@ createBook(book:Book):Observable<Book>{
     headers:Httpheaders
   })
  }
+
+ DeleteBook(id:number):Observable<{}>{
+  let Httpheaders=new HttpHeaders().set("Content-Type","application/json");
+
+  return this._http.delete<Book>(this.apiUrl+"/"+id,{
+    headers:Httpheaders
+  })
+ }
 }
